@@ -1,0 +1,18 @@
+projekt
+mobilny kalkulator kalorii
+
+
+ogólny opis funkcjonalny
+
+
+metodyka tworzenia oprogramowania
+kanban
+
+
+środowisko
+react-native: jeden kod do stworzenia aplikacja na iOS i Android korzystając z natywnych komponentów (zamiast webowych)
+wstępny stos technologiczny: react-native, EcmaScript, npm, yarn
+
+
+projektowany rozmiar aplikacji
+kilka tysięcy linii kodu
