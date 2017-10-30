@@ -1,9 +1,12 @@
 import React from 'react';
-import UserView from "./user/UserView";
+import {buildNewStore} from "./src/config/reduxStore";
+import Root from "./src/config/Root";
+
+const store = buildNewStore();
 
 export default class App extends React.Component {
 
   render() {
-    return (<UserView/>);
+    return (<Root store={store}/>);
   }
 }
