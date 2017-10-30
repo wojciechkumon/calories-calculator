@@ -8,6 +8,14 @@ import {caloriesApp} from './caloriesApp';
 export const history = createHistory();
 
 export const buildNewStore = () => {
-  const middleware = applyMiddleware(thunkMiddleware, routerMiddleware(history));
-  return createStore(caloriesApp, middleware);
+  return createStore(caloriesApp, getMiddleware());
+};
+
+const getMiddleware = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return applyMiddleware(thunkMiddleware, routerMiddleware(history));
+  } else {
+    const logger = require("redux-logger").createLogger();
+    return applyMiddleware(thunkMiddleware, routerMiddleware(history), logger);
+  }
 };
