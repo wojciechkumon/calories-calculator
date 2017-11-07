@@ -1,4 +1,4 @@
-export const foodList = [{
+export const foodTypes = [{
   id: 1001,
   name: "butter,with salt",
   kcal: 717,
