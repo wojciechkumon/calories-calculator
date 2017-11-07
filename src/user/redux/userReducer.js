@@ -4,7 +4,7 @@ import {
   USER_GENDER_CHANGED,
   USER_HEIGHT_CHANGED,
   USER_WEIGHT_CHANGED
-} from "../../config/actions";
+} from '../../config/actions';
 
 const userStartingState = {
   weight: '',

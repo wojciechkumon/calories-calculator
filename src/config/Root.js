@@ -4,7 +4,7 @@ import ConnectedRouter from 'react-router-redux/es/ConnectedRouter';
 import {Route, Switch} from 'react-router-native';
 import Provider from 'react-redux/es/components/Provider';
 import {history} from './reduxStore';
-import UserView from "../user/UserView";
+import UserView from '../user/UserView';
 
 export class Root extends Component {
 

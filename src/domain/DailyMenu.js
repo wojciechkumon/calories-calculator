@@ -1,11 +1,11 @@
 // @flow
-import {Dish} from "./Dish";
+import {Dish} from './Dish';
 
 export class DailyMenu {
   date: string;
-  dishList: [Dish];
+  dishList: Dish[];
 
-  constructor(date: string, dishList: [Dish]) {
+  constructor(date: string, dishList: Dish[]) {
     this.date = date;
     this.dishList = dishList;
   }

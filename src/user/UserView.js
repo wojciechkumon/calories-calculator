@@ -3,9 +3,9 @@ import connect from 'react-redux/es/connect/connect';
 import {StyleSheet, View} from 'react-native';
 import PropTypes from 'prop-types';
 import NumberInput from './NumberInput';
-import GenderRadioButton from "./GenderRadioButton";
-import bindActionCreators from "redux/es/bindActionCreators";
-import {setUserField} from "./redux/user";
+import GenderRadioButton from './GenderRadioButton';
+import bindActionCreators from 'redux/es/bindActionCreators';
+import {setUserField} from './redux/user';
 
 class UserView extends React.PureComponent {
 

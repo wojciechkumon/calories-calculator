@@ -1,5 +1,5 @@
 // @flow
-import {FoodType} from "./FoodType";
+import {FoodType} from './FoodType';
 
 export class Food {
   foodType: FoodType;
