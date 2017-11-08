@@ -1,16 +1,19 @@
 import {createReducer} from '../../util/reduxUtils';
 import {
+  USER_ACTIVITY_CHANGED,
   USER_AGE_CHANGED,
   USER_GENDER_CHANGED,
   USER_HEIGHT_CHANGED,
   USER_WEIGHT_CHANGED
 } from '../../config/actions';
+import {NO_ACTIVITY} from "../userActivity";
 
 const userStartingState = {
   weight: '',
   age: '',
   height: '',
-  gender: 'F'
+  gender: 'F',
+  activity: NO_ACTIVITY
 };
 
 export const user = createReducer(userStartingState, {
@@ -25,5 +28,8 @@ export const user = createReducer(userStartingState, {
   },
   [USER_GENDER_CHANGED](state, action) {
     return {...state, gender: action.gender};
+  },
+  [USER_ACTIVITY_CHANGED](state, action) {
+    return {...state, activity: action.activity};
   }
 });

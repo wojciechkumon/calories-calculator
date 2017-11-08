@@ -6,6 +6,7 @@ import NumberInput from './NumberInput';
 import GenderRadioButton from './GenderRadioButton';
 import bindActionCreators from 'redux/es/bindActionCreators';
 import {setUserField} from './redux/user';
+import ActivityPicker from "./ActivityPicker";
 
 class UserView extends React.PureComponent {
 
@@ -14,7 +15,7 @@ class UserView extends React.PureComponent {
   };
 
   render() {
-    const {weight, age, height, gender} = this.props;
+    const {weight, age, height, gender, activity} = this.props;
 
     return (
       <View style={styles.container}>
@@ -29,6 +30,9 @@ class UserView extends React.PureComponent {
                      onChangeText={this.createFieldSetter('height')}/>
         <GenderRadioButton gender={gender}
                            onChange={this.createFieldSetter('gender')}/>
+        <ActivityPicker
+          activity={activity}
+          onActivityChange={this.createFieldSetter('activity')}/>
       </View>
     );
   }
@@ -48,6 +52,7 @@ UserView.propTypes = {
   age: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
+  activity: PropTypes.number.isRequired,
   setUserField: PropTypes.func.isRequired
 };
 
@@ -56,7 +61,8 @@ const mapStateToProps = state => {
     weight: state.user.weight,
     age: state.user.age,
     height: state.user.height,
-    gender: state.user.gender
+    gender: state.user.gender,
+    activity: state.user.activity
   };
 };
 

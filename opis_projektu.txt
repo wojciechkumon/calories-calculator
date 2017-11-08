@@ -16,3 +16,18 @@ wstępny stos technologiczny: react-native, EcmaScript, npm, yarn
 
 projektowany rozmiar aplikacji
 kilka tysięcy linii kodu
+
+
+
+nowe:
+
+opis ogolny,
+opis szczegolowy
+
+technologie spis,
+narzedzia,
+
+architektura,
+UML diagram klas
+
+ewentualnie przypadki uzycia
