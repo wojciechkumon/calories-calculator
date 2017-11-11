@@ -2,11 +2,11 @@
 import {Food} from './Food';
 
 export class Dish {
-  dishType: string;
+  type: string;
   foodList: Food[];
 
-  constructor(dishType: string, foodList: Food[]) {
-    this.dishType = dishType;
+  constructor(type: string, foodList: Food[]) {
+    this.type = type;
     this.foodList = foodList;
   }
 }
