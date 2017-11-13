@@ -3,14 +3,14 @@ import type {Activity} from './Activity';
 import type {Gender} from './Gender';
 
 export class User {
-  name: string;
+  weight: number;
   age: number;
   height: number;
   activity: Activity;
   gender: Gender;
 
-  constructor(name: string, age: number, height: number, activity: Activity, gender: Gender) {
-    this.name = name;
+  constructor(weight: number, age: number, height: number, activity: Activity, gender: Gender) {
+    this.weight = weight;
     this.age = age;
     this.height = height;
     this.activity = activity;

@@ -1,17 +1,28 @@
+// @flow
 import React from 'react';
 import connect from 'react-redux/es/connect/connect';
-import {StyleSheet, View} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
 import PropTypes from 'prop-types';
 import NumberInput from './NumberInput';
 import GenderRadioButton from './GenderRadioButton';
 import bindActionCreators from 'redux/es/bindActionCreators';
-import {setUserField} from './redux/user';
-import ActivityPicker from "./ActivityPicker";
+import {setUserField} from './redux/userForm';
+import ActivityPicker from './ActivityPicker';
+import {User} from '../domain/User';
+import {setAndSaveUserData} from './redux/user';
 
 class UserView extends React.PureComponent {
 
   createFieldSetter = fieldName => value => {
     this.props.setUserField(fieldName, value);
+  };
+
+  save = () => {
+    // TODO validation (redux-form maybe?)
+    // TODO init form data using state.user.userData if exists
+    const {weight, age, height, gender, activity, saveUserData} = this.props;
+    let user: User = new User(Number(weight), Number(age), Number(height), activity, gender);
+    saveUserData(user);
   };
 
   render() {
@@ -30,9 +41,11 @@ class UserView extends React.PureComponent {
                      onChangeText={this.createFieldSetter('height')}/>
         <GenderRadioButton gender={gender}
                            onChange={this.createFieldSetter('gender')}/>
-        <ActivityPicker
-          activity={activity}
-          onActivityChange={this.createFieldSetter('activity')}/>
+        <ActivityPicker activity={activity}
+                        onActivityChange={this.createFieldSetter('activity')}/>
+        <Button onPress={this.save}
+                title='Save'
+                color='#008AFF'/>
       </View>
     );
   }
@@ -52,7 +65,7 @@ UserView.propTypes = {
   age: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
   gender: PropTypes.string.isRequired,
-  activity: PropTypes.number.isRequired,
+  activity: PropTypes.string.isRequired,
   setUserField: PropTypes.func.isRequired
 };
 
@@ -67,7 +80,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {setUserField: bindActionCreators(setUserField, dispatch)};
+  return {
+    setUserField: bindActionCreators(setUserField, dispatch),
+    saveUserData: bindActionCreators(setAndSaveUserData, dispatch)
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserView);

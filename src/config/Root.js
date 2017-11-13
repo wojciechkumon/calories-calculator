@@ -5,8 +5,21 @@ import {Route, Switch} from 'react-router-native';
 import Provider from 'react-redux/es/components/Provider';
 import {history} from './reduxStore';
 import UserView from '../user/UserView';
+import {UserService} from '../service/UserService';
+import {setUserData} from '../user/redux/user';
 
 export class Root extends Component {
+
+  componentDidMount() {
+    const {dispatch} = this.props.store;
+
+    UserService.getPersistedUserData()
+      .then(user => {
+        if (user) {
+          dispatch(setUserData(user));
+        }
+      })
+  }
 
   render() {
     const {store} = this.props;

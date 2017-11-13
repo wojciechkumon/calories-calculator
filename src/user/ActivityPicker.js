@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Text} from 'react-native';
 import Selectbox from 'react-native-selectbox'
-import {AVERAGE_ACTIVITY, HIGH_ACTIVITY, LIGHT_ACTIVITY, NO_ACTIVITY} from './userActivity';
+import {Activities} from '../domain/Activity';
 
 class ActivityPicker extends React.PureComponent {
 
   render() {
     const {activity, onActivityChange} = this.props;
-    const selectedItem = items[activity];
+    const selectedItem = items[activityToIndexMap[activity]];
 
     return (
       <Selectbox
@@ -24,17 +24,24 @@ class ActivityPicker extends React.PureComponent {
 }
 
 const items = [
-  {key: NO_ACTIVITY, label: 'No activity or very low activity', value: NO_ACTIVITY},
-  {key: LIGHT_ACTIVITY, label: 'Light physical activity', value: LIGHT_ACTIVITY},
-  {key: AVERAGE_ACTIVITY, label: 'Average physical activity', value: AVERAGE_ACTIVITY},
-  {key: HIGH_ACTIVITY, label: 'High physical activity', value: HIGH_ACTIVITY}
+  {key: Activities.NO_ACTIVITY, label: 'No activity or very low activity', value: Activities.NO_ACTIVITY},
+  {key: Activities.LIGHT_ACTIVITY, label: 'Light physical activity', value: Activities.LIGHT_ACTIVITY},
+  {key: Activities.AVERAGE_ACTIVITY, label: 'Average physical activity', value: Activities.AVERAGE_ACTIVITY},
+  {key: Activities.HIGH_ACTIVITY, label: 'High physical activity', value: Activities.HIGH_ACTIVITY}
 ];
 
 const description = {
-  [NO_ACTIVITY]: '',
-  [LIGHT_ACTIVITY]: 'light workouts 1-3 times a week',
-  [AVERAGE_ACTIVITY]: '3 - 5 workouts per week of moderate intensity',
-  [HIGH_ACTIVITY]: '6 - 7 workouts a medium or high intensity'
+  [Activities.NO_ACTIVITY]: '',
+  [Activities.LIGHT_ACTIVITY]: 'light workouts 1-3 times a week',
+  [Activities.AVERAGE_ACTIVITY]: '3 - 5 workouts per week of moderate intensity',
+  [Activities.HIGH_ACTIVITY]: '6 - 7 workouts a medium or high intensity'
+};
+
+const activityToIndexMap = {
+  [Activities.NO_ACTIVITY]: 0,
+  [Activities.LIGHT_ACTIVITY]: 1,
+  [Activities.AVERAGE_ACTIVITY]: 2,
+  [Activities.HIGH_ACTIVITY]: 3
 };
 
 const firstLineStyles = {
@@ -52,7 +59,7 @@ const secondLineStyles = {
 };
 
 ActivityPicker.propTypes = {
-  activity: PropTypes.number.isRequired,
+  activity: PropTypes.string.isRequired,
   onActivityChange: PropTypes.func.isRequired
 };
 
