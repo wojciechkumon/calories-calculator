@@ -16,7 +16,7 @@ const userStartingState = {
   activity: NO_ACTIVITY
 };
 
-export const user = createReducer(userStartingState, {
+export const userForm = createReducer(userStartingState, {
   [USER_WEIGHT_CHANGED](state, action) {
     return {...state, weight: action.weight};
   },

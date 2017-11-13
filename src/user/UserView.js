@@ -58,11 +58,11 @@ UserView.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    weight: state.user.weight,
-    age: state.user.age,
-    height: state.user.height,
-    gender: state.user.gender,
-    activity: state.user.activity
+    weight: state.userForm.weight,
+    age: state.userForm.age,
+    height: state.userForm.height,
+    gender: state.userForm.gender,
+    activity: state.userForm.activity
   };
 };
 

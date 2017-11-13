@@ -26,5 +26,5 @@ export const setUserField = (name, value) => {
     case 'activity':
       return setUserActivity(value);
   }
-  throw new Error('user field name not matched:', name, value);
+  throw new Error('userForm field name not matched:', name, value);
 };
