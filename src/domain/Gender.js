@@ -1,8 +1,8 @@
 // @flow
 
 export const Genders = {
-  'FEMALE',
-  'MAKE'
+  FEMALE: 'FEMALE',
+  MALE: 'MALE'
 };
 
 export type Gender = $Keys<typeof Genders>

@@ -1,6 +1,6 @@
 import React from 'react';
-import {buildNewStore} from "./src/config/reduxStore";
-import Root from "./src/config/Root";
+import {buildNewStore} from './src/config/reduxStore';
+import Root from './src/config/Root';
 
 const store = buildNewStore();
 

@@ -6,7 +6,7 @@ import {
   USER_HEIGHT_CHANGED,
   USER_WEIGHT_CHANGED
 } from '../../config/actions';
-import {NO_ACTIVITY} from "../userActivity";
+import {NO_ACTIVITY} from '../userActivity';
 
 const userStartingState = {
   weight: '',

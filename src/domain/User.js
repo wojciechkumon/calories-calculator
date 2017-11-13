@@ -1,7 +1,6 @@
 // @flow
-
-import type {Activity} from "./Activity";
-import type {Gender} from "./Gender";
+import type {Activity} from './Activity';
+import type {Gender} from './Gender';
 
 export class User {
   name: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Text} from "react-native";
+import {Text} from 'react-native';
 import Selectbox from 'react-native-selectbox'
-import {AVERAGE_ACTIVITY, HIGH_ACTIVITY, LIGHT_ACTIVITY, NO_ACTIVITY} from "./userActivity";
+import {AVERAGE_ACTIVITY, HIGH_ACTIVITY, LIGHT_ACTIVITY, NO_ACTIVITY} from './userActivity';
 
 class ActivityPicker extends React.PureComponent {
 
