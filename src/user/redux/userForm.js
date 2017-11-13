@@ -1,17 +1,17 @@
 import {makeActionCreator} from '../../util/reduxUtils';
 import {
-  USER_ACTIVITY_CHANGED,
-  USER_AGE_CHANGED,
-  USER_GENDER_CHANGED,
-  USER_HEIGHT_CHANGED,
-  USER_WEIGHT_CHANGED
+  USER_FORM_ACTIVITY_CHANGED,
+  USER_FORM_AGE_CHANGED,
+  USER_FORM_GENDER_CHANGED,
+  USER_FORM_HEIGHT_CHANGED,
+  USER_FORM_WEIGHT_CHANGED
 } from '../../config/actions';
 
-const setUserWeight = makeActionCreator(USER_WEIGHT_CHANGED, 'weight');
-const setUserAge = makeActionCreator(USER_AGE_CHANGED, 'age');
-const setUserHeight = makeActionCreator(USER_HEIGHT_CHANGED, 'height');
-const setUserGender = makeActionCreator(USER_GENDER_CHANGED, 'gender');
-const setUserActivity = makeActionCreator(USER_ACTIVITY_CHANGED, 'activity');
+const setUserWeight = makeActionCreator(USER_FORM_WEIGHT_CHANGED, 'weight');
+const setUserAge = makeActionCreator(USER_FORM_AGE_CHANGED, 'age');
+const setUserHeight = makeActionCreator(USER_FORM_HEIGHT_CHANGED, 'height');
+const setUserGender = makeActionCreator(USER_FORM_GENDER_CHANGED, 'gender');
+const setUserActivity = makeActionCreator(USER_FORM_ACTIVITY_CHANGED, 'activity');
 
 export const setUserField = (name, value) => {
   switch (name) {
