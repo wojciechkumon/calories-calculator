@@ -1,6 +1,7 @@
 // @flow
 import type {Activity} from './Activity';
 import type {Gender} from './Gender';
+import {getActivityCoefficient, getGenderCoefficient} from './coefficients';
 
 export class User {
   weight: number;
@@ -15,5 +16,16 @@ export class User {
     this.height = height;
     this.activity = activity;
     this.gender = gender;
+  }
+
+  calcBmr() {
+    const coefficient = getGenderCoefficient(this.gender);
+    return (10 * this.weight) + (6.25 * this.height) - (5 * this.age) + coefficient;
+  }
+
+  calcIntake() {
+    const coefficient = getActivityCoefficient(this.activity);
+    const bmr = this.calcBmr();
+    return bmr * coefficient;
   }
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {SegmentedControls} from 'react-native-radio-buttons';
+import {Genders} from "../domain/Gender";
 
 export default class GenderRadioButton extends React.PureComponent {
 
   handleChange = newOption => {
     const gender = newOption.value;
-    if (['F', 'M'].includes(gender)) {
+    if (Object.values(Genders).includes(gender)) {
       this.props.onChange(gender);
     }
   };
@@ -15,8 +16,8 @@ export default class GenderRadioButton extends React.PureComponent {
     const {gender} = this.props;
 
     const genderRadioProps = [
-      {label: 'Female', value: 'F'},
-      {label: 'Male', value: 'M'}
+      {label: 'Female', value: Genders.FEMALE},
+      {label: 'Male', value: Genders.MALE}
     ];
 
     return (

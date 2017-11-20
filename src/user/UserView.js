@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import connect from 'react-redux/es/connect/connect';
-import {Button, StyleSheet, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
 import NumberInput from './NumberInput';
 import GenderRadioButton from './GenderRadioButton';
@@ -10,6 +10,7 @@ import {setUserField} from './redux/userForm';
 import ActivityPicker from './ActivityPicker';
 import {User} from '../domain/User';
 import {setAndSaveUserData} from './redux/user';
+import {PINK} from '../common/colors';
 
 class UserView extends React.PureComponent {
 
@@ -30,6 +31,9 @@ class UserView extends React.PureComponent {
 
     return (
       <View style={styles.container}>
+        <Text style={{fontWeight: 'bold', color: PINK}}>
+          Please enter your body data.
+        </Text>
         <NumberInput name='weight'
                      text={weight}
                      onChangeText={this.createFieldSetter('weight')}/>
