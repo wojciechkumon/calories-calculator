@@ -1,11 +1,11 @@
-import {makeActionCreator} from '../../util/reduxUtils';
+import {makeActionCreator} from '../../../util/reduxUtils';
 import {
   USER_FORM_ACTIVITY_CHANGED,
   USER_FORM_AGE_CHANGED,
   USER_FORM_GENDER_CHANGED,
   USER_FORM_HEIGHT_CHANGED,
   USER_FORM_WEIGHT_CHANGED
-} from '../../config/actions';
+} from '../../../config/actions';
 
 const setUserWeight = makeActionCreator(USER_FORM_WEIGHT_CHANGED, 'weight');
 const setUserAge = makeActionCreator(USER_FORM_AGE_CHANGED, 'age');

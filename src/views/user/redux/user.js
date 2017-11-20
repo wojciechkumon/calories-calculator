@@ -1,8 +1,8 @@
 // @flow
-import {User} from '../../domain/User';
-import {UserService} from '../../service/UserService';
-import {makeActionCreator} from '../../util/reduxUtils';
-import {USER_DATA_CHANGED} from '../../config/actions';
+import {User} from '../../../domain/User';
+import {UserService} from '../../../service/UserService';
+import {makeActionCreator} from '../../../util/reduxUtils';
+import {USER_DATA_CHANGED} from '../../../config/actions';
 
 export const setAndSaveUserData = (user: User) => {
   UserService.saveUserData(user);

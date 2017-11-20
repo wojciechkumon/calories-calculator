@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {SegmentedControls} from 'react-native-radio-buttons';
-import {Genders} from "../domain/Gender";
+import {Genders} from "../../domain/Gender";
 
 export default class GenderRadioButton extends React.PureComponent {
 

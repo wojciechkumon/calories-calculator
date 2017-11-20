@@ -1,13 +1,13 @@
-import {createReducer} from '../../util/reduxUtils';
+import {createReducer} from '../../../util/reduxUtils';
 import {
   USER_FORM_ACTIVITY_CHANGED,
   USER_FORM_AGE_CHANGED,
   USER_FORM_GENDER_CHANGED,
   USER_FORM_HEIGHT_CHANGED,
   USER_FORM_WEIGHT_CHANGED
-} from '../../config/actions';
-import {Activities} from '../../domain/Activity';
-import {Genders} from "../../domain/Gender";
+} from '../../../config/actions';
+import {Activities} from '../../../domain/Activity';
+import {Genders} from "../../../domain/Gender";
 
 const userFormStartingState = {
   weight: '',

@@ -8,9 +8,9 @@ import GenderRadioButton from './GenderRadioButton';
 import bindActionCreators from 'redux/es/bindActionCreators';
 import {setUserField} from './redux/userForm';
 import ActivityPicker from './ActivityPicker';
-import {User} from '../domain/User';
+import {User} from '../../domain/User';
 import {setAndSaveUserData} from './redux/user';
-import {PINK} from '../common/colors';
+import {PINK} from '../../common/colors';
 
 class UserView extends React.PureComponent {
 

@@ -1,6 +1,6 @@
-import {createReducer} from '../../util/reduxUtils';
-import {USER_DATA_CHANGED} from '../../config/actions';
-import {User} from '../../domain/User';
+import {createReducer} from '../../../util/reduxUtils';
+import {USER_DATA_CHANGED} from '../../../config/actions';
+import {User} from '../../../domain/User';
 
 const userStartingState: User = {
   userData: undefined
