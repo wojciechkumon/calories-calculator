@@ -30,27 +30,28 @@ class UserView extends React.PureComponent {
     const {weight, age, height, gender, activity} = this.props;
 
     return (
-      <View style={styles.container}>
-        <Text style={{fontWeight: 'bold', color: PINK}}>
-          Please enter your body data.
-        </Text>
-        <NumberInput name='weight'
-                     text={weight}
-                     onChangeText={this.createFieldSetter('weight')}/>
-        <NumberInput name='age'
-                     text={age}
-                     onChangeText={this.createFieldSetter('age')}/>
-        <NumberInput name='height'
-                     text={height}
-                     onChangeText={this.createFieldSetter('height')}/>
-        <GenderRadioButton gender={gender}
-                           onChange={this.createFieldSetter('gender')}/>
-        <ActivityPicker activity={activity}
-                        onActivityChange={this.createFieldSetter('activity')}/>
-        <Button onPress={this.save}
-                title='Save'
-                color='#008AFF'/>
-      </View>
+        <View style={styles.container}>
+          <Text style={styles.title}>
+            Please enter your body data.
+          </Text>
+          <NumberInput name='weight'
+                       text={weight}
+                       onChangeText={this.createFieldSetter('weight')}/>
+          <NumberInput name='age'
+                       text={age}
+                       onChangeText={this.createFieldSetter('age')}/>
+          <NumberInput name='height'
+                       text={height}
+                       onChangeText={this.createFieldSetter('height')}/>
+          <GenderRadioButton gender={gender}
+                             onChange={this.createFieldSetter('gender')}/>
+          <ActivityPicker activity={activity}
+                          onActivityChange={this.createFieldSetter(
+                              'activity')}/>
+          <Button onPress={this.save}
+                  title='Save'
+                  color={PINK}/>
+        </View>
     );
   }
 }
@@ -61,6 +62,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 30,
+    color: PINK,
+    padding: 20
   }
 });
 

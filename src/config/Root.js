@@ -7,9 +7,9 @@ import {UserService} from '../service/UserService';
 import {setUserData} from '../views/user/redux/user';
 import {TabNavigator} from 'react-navigation';
 import {Icon} from 'react-native-elements';
-import FoodView from "../views/food/FoodView";
-import InfoView from "../views/info/InfoView";
-import MacroView from "../views/macro/MacroView";
+import FoodView from '../views/food/FoodView';
+import InfoView from '../views/info/InfoView';
+import MacroView from '../views/macro/MacroView';
 
 export class Root extends Component {
 

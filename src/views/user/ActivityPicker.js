@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Text} from 'react-native';
-import Selectbox from 'react-native-selectbox'
+import Selectbox from 'react-native-selectbox';
 import {Activities} from '../../domain/Activity';
+import {PINK} from '../../common/colors';
 
 class ActivityPicker extends React.PureComponent {
 
@@ -48,14 +49,14 @@ const firstLineStyles = {
   marginTop: 10,
   fontSize: 18,
   textAlign: 'center',
-  color: '#008AFF'
+  color: PINK
 };
 
 const secondLineStyles = {
   marginTop: 2,
   fontSize: 18,
   textAlign: 'center',
-  color: '#008AFF'
+  color: PINK
 };
 
 ActivityPicker.propTypes = {
