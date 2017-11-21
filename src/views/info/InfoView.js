@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {PINK} from '../../common/colors';
+import {title, container} from '../../common/style';
 import {CALORIES_TITLE, CALORIES_TEXT, MACRO_TITLE, MACRO_TEXT, FOOD_TITLE, FOOD_TEXT} from './text';
 class InfoView extends React.PureComponent {
 
@@ -29,19 +29,12 @@ const Section = props =>
     </View>;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column'
-  },
-  section: {
-    flex: 1 / 3,
-    padding: 50
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 30,
-    color: PINK
-  }
+    container,
+    title,
+    section: {
+        flex: 1 / 3,
+        padding: 50
+    }
 });
 
 export default InfoView;

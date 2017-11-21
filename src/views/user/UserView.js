@@ -11,6 +11,7 @@ import ActivityPicker from './ActivityPicker';
 import {User} from '../../domain/User';
 import {setAndSaveUserData} from './redux/user';
 import {PINK} from '../../common/colors';
+import {title, container} from '../../common/style';
 
 class UserView extends React.PureComponent {
 
@@ -29,46 +30,51 @@ class UserView extends React.PureComponent {
   render() {
     const {weight, age, height, gender, activity} = this.props;
 
-    return (
-        <View style={styles.container}>
-          <Text style={styles.title}>
-            Please enter your body data.
-          </Text>
-          <NumberInput name='weight'
-                       text={weight}
-                       onChangeText={this.createFieldSetter('weight')}/>
-          <NumberInput name='age'
-                       text={age}
-                       onChangeText={this.createFieldSetter('age')}/>
-          <NumberInput name='height'
-                       text={height}
-                       onChangeText={this.createFieldSetter('height')}/>
-          <GenderRadioButton gender={gender}
-                             onChange={this.createFieldSetter('gender')}/>
-          <ActivityPicker activity={activity}
-                          onActivityChange={this.createFieldSetter(
-                              'activity')}/>
-          <Button onPress={this.save}
-                  title='Save'
-                  color={PINK}/>
-        </View>
-    );
-  }
+        return (
+            <View style={styles.container}>
+                <View style={styles.titleSection}>
+                    <Text style={styles.title}>
+                        Please enter your body data.
+                    </Text>
+                </View>
+                <View style={styles.formSection}>
+                    <NumberInput name='weight'
+                                 text={weight}
+                                 onChangeText={this.createFieldSetter('weight')}/>
+                    <NumberInput name='age'
+                                 text={age}
+                                 onChangeText={this.createFieldSetter('age')}/>
+                    <NumberInput name='height'
+                                 text={height}
+                                 onChangeText={this.createFieldSetter('height')}/>
+                    <GenderRadioButton gender={gender}
+                                       onChange={this.createFieldSetter('gender')}/>
+                    <ActivityPicker activity={activity}
+                                    onActivityChange={this.createFieldSetter(
+                                        'activity')}/>
+                    <Button onPress={this.save}
+                            title='Save'
+                            color={PINK}/>
+                </View>
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 30,
-    color: PINK,
-    padding: 20
-  }
+    container: {
+        ...container,
+        padding: 20
+    },
+    titleSection: {
+        flex: 0.25,
+        padding: 30
+    },
+    formSection: {
+        flex: 0.75,
+        padding: 20
+    },
+    title
 });
 
 UserView.propTypes = {

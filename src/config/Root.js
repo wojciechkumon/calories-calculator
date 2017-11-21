@@ -10,64 +10,65 @@ import {Icon} from 'react-native-elements';
 import FoodView from '../views/food/FoodView';
 import InfoView from '../views/info/InfoView';
 import MacroView from '../views/macro/MacroView';
+import {PINK} from "../common/colors";
 
 export class Root extends Component {
 
-  componentDidMount() {
-    const {dispatch} = this.props.store;
+    componentDidMount() {
+        const {dispatch} = this.props.store;
 
-    UserService.getPersistedUserData()
-      .then(user => {
-        if (user) {
-          dispatch(setUserData(user));
-        }
-      })
-  }
+        UserService.getPersistedUserData()
+            .then(user => {
+                if (user) {
+                    dispatch(setUserData(user));
+                }
+            })
+    }
 
-  render() {
-    const {store} = this.props;
-    return (
-      <Provider store={store}>
-        <Tabs/>
-      </Provider>
-    );
-  }
+    render() {
+        const {store} = this.props;
+        return (
+            <Provider store={store}>
+                <Tabs/>
+            </Provider>
+        );
+    }
 }
 
+const getNavigationOptions = (label, iconName) => {
+    return {
+        tabBarLabel: label,
+        tabBarIcon: ({tintColor}) => <Icon name={iconName} size={35} color={tintColor}/>
+    }
+};
+
 export const Tabs = TabNavigator({
-  Me: {
-    screen: UserView,
-    navigationOptions: {
-      tabBarLabel: 'Me',
-      tabBarIcon: ({ tintColor }) => <Icon name="account-circle" size={35} color={tintColor} />
+    Me: {
+        screen: UserView,
+        navigationOptions: getNavigationOptions('Me', 'account-circle')
     },
-  },
-  Info: {
-    screen: InfoView,
-    navigationOptions: {
-      tabBarLabel: 'Info',
-      tabBarIcon: ({ tintColor }) => <Icon name="info" size={35} color={tintColor} />
+    Info: {
+        screen: InfoView,
+        navigationOptions: getNavigationOptions('Info', 'info')
     },
-  },
-  Macro: {
-    screen: MacroView,
-    navigationOptions: {
-      tabBarLabel: 'Macro',
-      tabBarIcon: ({ tintColor }) => <Icon name="pie-chart" size={35} color={tintColor} />
+    Macro: {
+        screen: MacroView,
+        navigationOptions: getNavigationOptions('Macro', 'pie-chart')
     },
-  },
-  Food: {
-    screen: FoodView,
-    navigationOptions: {
-      tabBarLabel: 'Food',
-      tabBarIcon: ({ tintColor }) => <Icon name="schedule" size={35} color={tintColor} />
+    Food: {
+        screen: FoodView,
+        navigationOptions: getNavigationOptions('Food', 'schedule'),
+    }
+}, {
+    animationEnabled: true,
+    tabBarOptions: {
+        activeTintColor: PINK,
     },
-  }
 });
 
 
 Root.propTypes = {
-  store: PropTypes.object.isRequired
+    store: PropTypes.object.isRequired
 };
 
 export default Root;
