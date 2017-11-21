@@ -1,6 +1,6 @@
 import React from 'react';
 import connect from 'react-redux/es/connect/connect';
-import {Text, View} from 'react-native';
+import {NoUserDataView} from './NoUserDataView';
 
 const withUserData = (WrappedComponent) => {
 
@@ -15,9 +15,7 @@ const withUserData = (WrappedComponent) => {
             }
 
             return (
-                <View>
-                    <Text>User data needed!</Text>
-                </View>
+                <NoUserDataView/>
             );
         }
     };
