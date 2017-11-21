@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {title, container} from '../../common/style';

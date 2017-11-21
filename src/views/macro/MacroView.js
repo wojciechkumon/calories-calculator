@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import {StyleSheet, Text, ScrollView, View} from 'react-native';
 import PieChart from 'react-native-pie-chart';
