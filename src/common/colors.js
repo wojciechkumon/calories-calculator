@@ -1,5 +1,9 @@
 export const PINK = '#C2185B';
-export const GREEN = '#7CC249';
-export const ORANGE = '#F49643';
-export const BLUE ='#1A7DD7';
+export const GREY = '#eeeeee';
+export const WHITE = '#ffffff';
 
+export const PIE_CHART_PALETTE = [
+    {'r':66,'g':164,'b':141},
+    {'r':240,'g':150,'b':72},
+    {'r':245,'g':52,'b':53}
+];

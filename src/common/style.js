@@ -1,4 +1,4 @@
-import {PINK} from './colors';
+import {PINK, GREY} from './colors';
 
 export const title = {
     fontWeight: 'bold',
@@ -10,4 +10,21 @@ export const container = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+};
+
+export const table = {
+    head: {height: 40, backgroundColor: GREY},
+    text: {textAlign: 'center'},
+    headText: {textAlign: 'center', fontWeight: 'bold'},
+    row: {height: 30}
+};
+
+export const text = {
+    info: {
+        fontWeight: 'bold',
+        fontSize: 22,
+    },
+    value: {
+        color: PINK
+    }
 };

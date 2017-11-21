@@ -10,7 +10,7 @@ export class UserService {
         .then(string => {
           if (string) {
             let json = JSON.parse(string);
-            return new User(json.name, json.age, json.height, json.activity, json.gender)
+            return new User(json.weight, json.age, json.height, json.activity, json.gender)
           }
         })
     } catch (e) {

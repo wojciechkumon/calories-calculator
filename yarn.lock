@@ -3592,11 +3592,11 @@ lodash.zipobject@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/lodash.zipobject/-/lodash.zipobject-4.1.3.tgz#b399f5aba8ff62a746f6979bf20b214f964dbef8"
 
-lodash@4.17.4, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.16.6, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.17.4, lodash@^4.0.0, lodash@^4.12.0, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.16.6, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-lodash@^3.5.0:
+lodash@^3.10.1, lodash@^3.5.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -4333,6 +4333,14 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
+paths-js@^0.3.4:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/paths-js/-/paths-js-0.3.5.tgz#67f010aca52b9a16d5372b55d751619b93e905be"
+
+paths-js@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/paths-js/-/paths-js-0.4.5.tgz#a030f8a0405ad1e30adcf560d2552bf3c2877921"
+
 pause@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/pause/-/pause-0.1.0.tgz#ebc8a4a8619ff0b8a81ac1513c3434ff469fdb74"
@@ -4621,6 +4629,15 @@ react-native-maps@0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.15.3.tgz#5d9e0a8e30ecc51dc755b7a3b9d6b6ed5e2dd08c"
 
+react-native-pathjs-charts@^0.0.32:
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/react-native-pathjs-charts/-/react-native-pathjs-charts-0.0.32.tgz#36d3256253722b5abc605ebba42db964c99e7db7"
+  dependencies:
+    babel-polyfill "^6.23.0"
+    lodash "^4.12.0"
+    paths-js "^0.4.5"
+    react-native-svg "~5.5.1"
+
 react-native-pie-chart@^1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/react-native-pie-chart/-/react-native-pie-chart-1.0.12.tgz#0d99e9cb4cb3a4503c20a9111d499d84a99b4276"
@@ -4672,11 +4689,22 @@ react-native-svg@5.3.0:
     color "^0.11.1"
     lodash "^4.16.6"
 
+react-native-svg@~5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-5.5.1.tgz#633d882077f048f05c721ebb793cd073e846ba1f"
+  dependencies:
+    color "^0.11.1"
+    lodash "^4.16.6"
+
 react-native-tab-view@^0.0.70:
   version "0.0.70"
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.70.tgz#1dd2ded32acd0cb6bfef38d26e53675db733b37b"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-table-component@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-table-component/-/react-native-table-component-1.1.2.tgz#209414dc5a799714a56cc806995c76d2ca61b63b"
 
 react-native-vector-icons@4.1.1:
   version "4.1.1"
@@ -4800,6 +4828,14 @@ react-navigation@^1.0.0-beta.19:
     prop-types "^15.5.10"
     react-native-drawer-layout-polyfill "^1.3.2"
     react-native-tab-view "^0.0.70"
+
+react-pathjs-chart@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/react-pathjs-chart/-/react-pathjs-chart-0.3.5.tgz#d913c86c0df5162cb4dd626090eae75f47710404"
+  dependencies:
+    lodash "^3.10.1"
+    paths-js "^0.3.4"
+    vivus "^0.2.1"
 
 react-proxy@^1.1.7:
   version "1.1.8"
@@ -6006,6 +6042,10 @@ vinyl@^0.5.0:
     clone "^1.0.0"
     clone-stats "^0.0.1"
     replace-ext "0.0.1"
+
+vivus@^0.2.1:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/vivus/-/vivus-0.2.3.tgz#f8e0b9d4b209219c1a56b27ef883af9a3e7cd03e"
 
 walker@~1.0.5:
   version "1.0.7"

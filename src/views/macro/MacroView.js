@@ -1,42 +1,47 @@
 import React from 'react';
-import {StyleSheet, Text, ScrollView, View} from 'react-native';
-import PieChart from 'react-native-pie-chart';
-import {title} from '../../common/style';
-import {BLUE, GREEN, ORANGE} from '../../common/colors';
+import connect from 'react-redux/es/connect/connect';
+import {StyleSheet, Text, View} from 'react-native';
+import {User} from '../../domain/User';
+import PieChart from './PieChart';
+import {MacroTable} from './Table';
+import {text} from '../../common/style';
 
 class MacroView extends React.PureComponent {
 
     render() {
-        const chart_wh = 250;
-        const series = [123, 321, 789];
-        const colors = [BLUE, GREEN, ORANGE];
+        const {userData} = this.props;
+        const user = (userData : User);
+        const intake = user.calcIntake();
+        const bmr = user.calcBmr();
 
         return (
-            <ScrollView style={styles.container}>
-                <Text style={styles.title}>
-                    Calculate your macro.
-                </Text>
-                <View style={styles.pieChart}>
-                    <PieChart
-                        chart_wh={chart_wh}
-                        series={series}
-                        sliceColor={colors}
-                    />
-                </View>
-            </ScrollView>
+            <View style={styles.container}>
+                <InfoText type='BMR' value={bmr}/>
+                <InfoText type='Calories intake' value={intake}/>
+                <PieChart/>
+                <MacroTable intake={intake}/>
+            </View>
         );
     }
 }
+
+const InfoText = props =>
+    <Text style={styles.info}>
+        {props.type}: <Text style={styles.value}>{props.value} kcal</Text>
+    </Text>;
 
 const styles = StyleSheet.create({
     container: {
        flex: 1,
        padding: 30
     },
-    pieChart: {
-        padding: 20
-    },
-    title
+    ...text
 });
 
-export default MacroView;
+const mapStateToProps = state => {
+    return {
+        userData: state.user.userData
+    };
+};
+
+export default connect(mapStateToProps, null)(MacroView);
