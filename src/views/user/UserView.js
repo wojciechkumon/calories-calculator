@@ -3,7 +3,7 @@ import React from 'react';
 import connect from 'react-redux/es/connect/connect';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
-import NumberInput from './NumberInput';
+import PositiveNumberInput from './PositiveNumberInput';
 import GenderRadioButton from './GenderRadioButton';
 import bindActionCreators from 'redux/es/bindActionCreators';
 import {setUserField} from './redux/userForm';
@@ -38,15 +38,15 @@ class UserView extends React.PureComponent {
                     </Text>
                 </View>
                 <View style={styles.formSection}>
-                    <NumberInput name='weight'
-                                 text={weight}
-                                 onChangeText={this.createFieldSetter('weight')}/>
-                    <NumberInput name='age'
-                                 text={age}
-                                 onChangeText={this.createFieldSetter('age')}/>
-                    <NumberInput name='height'
-                                 text={height}
-                                 onChangeText={this.createFieldSetter('height')}/>
+                    <PositiveNumberInput name='weight'
+                                         text={weight}
+                                         onChangeText={this.createFieldSetter('weight')}/>
+                    <PositiveNumberInput name='age'
+                                         text={age}
+                                         onChangeText={this.createFieldSetter('age')}/>
+                    <PositiveNumberInput name='height'
+                                         text={height}
+                                         onChangeText={this.createFieldSetter('height')}/>
                     <GenderRadioButton gender={gender}
                                        onChange={this.createFieldSetter('gender')}/>
                     <ActivityPicker activity={activity}

@@ -5,7 +5,7 @@ import {Keyboard, Text, TextInput, TouchableWithoutFeedback, View} from 'react-n
 export default class NumberInput extends React.PureComponent {
 
   handleTextChange = newText => {
-    if (isNaN(newText)) {
+    if (isNaN(newText) || Number(newText) <= 0) {
       return;
     }
     this.props.onChangeText(newText);

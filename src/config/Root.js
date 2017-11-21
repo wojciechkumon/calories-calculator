@@ -11,6 +11,7 @@ import FoodView from '../views/food/FoodView';
 import InfoView from '../views/info/InfoView';
 import MacroView from '../views/macro/MacroView';
 import {PINK} from "../common/colors";
+import withUserData from "../views/user/withUserData";
 
 export class Root extends Component {
 
@@ -52,11 +53,11 @@ export const Tabs = TabNavigator({
         navigationOptions: getNavigationOptions('Info', 'info')
     },
     Macro: {
-        screen: MacroView,
+        screen: withUserData(MacroView),
         navigationOptions: getNavigationOptions('Macro', 'pie-chart')
     },
     Food: {
-        screen: FoodView,
+        screen: withUserData(FoodView),
         navigationOptions: getNavigationOptions('Food', 'schedule'),
     }
 }, {
