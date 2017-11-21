@@ -7,7 +7,6 @@ const withUserData = (WrappedComponent) => {
     const wrapper = class WithUserData extends React.Component {
 
         render() {
-            console.log(this.props);
             const {userData} = this.props;
 
             if (userData) {

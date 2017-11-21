@@ -22,6 +22,8 @@
 ; Ignore misbehaving dev-dependencies
 .*/node_modules/xdl/build/*
 .*/node_modules/reqwest/tests/*
+.*/node_modules/react-native-tab-view/*
+.*/node_modules/react-navigation/*
 
 ; Ignore missing expo-sdk dependencies (temporarily)
 ; https://github.com/expo/expo/issues/162
