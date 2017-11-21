@@ -1,3 +1,4 @@
+import {StyleSheet} from 'react-native';
 import {PINK, GREY} from './colors';
 
 export const title = {
@@ -12,12 +13,12 @@ export const container = {
     justifyContent: 'center'
 };
 
-export const table = {
+export const tableStyles = StyleSheet.create({
     head: {height: 40, backgroundColor: GREY},
     text: {textAlign: 'center'},
     headText: {textAlign: 'center', fontWeight: 'bold'},
     row: {height: 30}
-};
+});
 
 export const text = {
     info: {
