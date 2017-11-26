@@ -2,7 +2,10 @@
 
 export const DishTypes = {
     BREAKFAST: 'BREAKFAST',
-    X: 'X'
+    LUNCH: 'LUNCH',
+    DINNER: 'DINNER',
+    SNACK: 'SNACK',
+    SUPPER: 'SUPPER'
 };
 
 export type DishType = $Keys<typeof DishTypes>
