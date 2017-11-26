@@ -12,16 +12,28 @@ import {User} from '../../domain/User';
 import {setAndSaveUserData} from './redux/user';
 import {PINK} from '../../common/colors';
 import {title, container} from '../../common/style';
+import {UserService} from "../../service/UserService";
 
 class UserView extends React.PureComponent {
+
+  componentDidMount = () => {
+    UserService.getPersistedUserData()
+        .then(user => {
+            if (user) {
+                this.createFieldSetter('weight')(user.weight.toString());
+                this.createFieldSetter('age')(user.age.toString());
+                this.createFieldSetter('height')(user.height.toString());
+                this.createFieldSetter('gender')(user.gender);
+                this.createFieldSetter('activity')(user.activity);
+            }
+        })
+  };
 
   createFieldSetter = fieldName => value => {
     this.props.setUserField(fieldName, value);
   };
 
   save = () => {
-    // TODO validation (redux-form maybe?)
-    // TODO init form data using state.user.userData if exists
     const {weight, age, height, gender, activity, saveUserData} = this.props;
     let user: User = new User(Number(weight), Number(age), Number(height), activity, gender);
     saveUserData(user);
