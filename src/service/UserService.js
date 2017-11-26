@@ -1,6 +1,6 @@
 // @flow
 import {User} from '../domain/User';
-import {AsyncStorage} from 'react-native';
+import {readFromStorage, saveToStorage} from "./asyncStorageUtils";
 
 export class UserService {
 
@@ -9,7 +9,7 @@ export class UserService {
       return readFromStorage(USER_KEY)
         .then(string => {
           if (string) {
-            let json = JSON.parse(string);
+            const json = JSON.parse(string);
             return new User(json.weight, json.age, json.height, json.activity, json.gender)
           }
         })
@@ -19,20 +19,8 @@ export class UserService {
   };
 
   static saveUserData = (user: User): Promise<any> => {
-    return saveToStorage(USER_KEY, JSON.stringify(user))
+    return saveToStorage(USER_KEY, JSON.stringify(user));
   };
 }
 
 const USER_KEY = 'user';
-
-async function saveToStorage(key: string, value: string): Promise<void> {
-  try {
-    await AsyncStorage.setItem(key, value);
-  } catch (e) {}
-}
-
-async function readFromStorage(key: string): Promise<?string> {
-  try {
-    return await AsyncStorage.getItem(key);
-  } catch (e) {}
-}

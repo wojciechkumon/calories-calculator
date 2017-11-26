@@ -29,6 +29,7 @@
     "prop-types": "^15.6.0",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.48.4",
+    "react-native-autocomplete-input": "^3.4.0",
     "react-native-datepicker": "^1.6.0",
     "react-native-elements": "^0.18.2",
     "react-native-pathjs-charts": "^0.0.32",

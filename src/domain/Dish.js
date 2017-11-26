@@ -1,12 +1,13 @@
 // @flow
 import {Food} from './Food';
+import type {DishType} from "./DishType";
 
 export class Dish {
-  type: string;
+  dishType: DishType;
   foodList: Food[];
 
-  constructor(type: string, foodList: Food[]) {
-    this.type = type;
+  constructor(dishType: DishType, foodList: Food[]) {
+    this.dishType = dishType;
     this.foodList = foodList;
   }
 }
