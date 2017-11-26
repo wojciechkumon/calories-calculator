@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import connect from 'react-redux/es/connect/connect';
 import bindActionCreators from 'redux/es/bindActionCreators';
 import PropTypes from 'prop-types';
@@ -52,10 +52,13 @@ class FoodView extends React.Component {
             );
         }
 
+        const dishSections = dailyMenu.dishList
+            .map(dish => <DishSection key={dish.dishType} dish={dish}/>);
+
         return (
-            <View style={styles.container}>
+            <ScrollView contentContainerStyle={styles.contentContainer}>
                 <DatePicker
-                    style={{width: 200}}
+                    style={{width: '90%'}}
                     date={date}
                     mode="date"
                     placeholder="select date"
@@ -64,14 +67,19 @@ class FoodView extends React.Component {
                     cancelBtnText="Cancel"
                     onDateChange={date => this.setNewDate(date)}
                     showIcon={false}/>
-                <DishSection/>
-            </View>
+                {dishSections}
+            </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    container,
+    contentContainer: {
+        paddingVertical: 20,
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     title
 });
 

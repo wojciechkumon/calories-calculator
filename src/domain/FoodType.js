@@ -1,4 +1,5 @@
 // @flow
+import PropTypes from 'prop-types';
 
 export class FoodType {
   name: string;
@@ -22,4 +23,12 @@ export class FoodType {
     this.fat = fat;
     this.carbohydrates = carbohydrates;
   }
+
+  static props = PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      kcal: PropTypes.number.isRequired,
+      protein: PropTypes.number.isRequired,
+      fat: PropTypes.number.isRequired,
+      carbohydrates: PropTypes.number.isRequired
+  });
 }

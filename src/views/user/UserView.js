@@ -3,7 +3,7 @@ import React from 'react';
 import connect from 'react-redux/es/connect/connect';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
-import PositiveNumberInput from './PositiveNumberInput';
+import PositiveNumberInput from '../PositiveNumberInput';
 import GenderRadioButton from './GenderRadioButton';
 import bindActionCreators from 'redux/es/bindActionCreators';
 import {setUserField} from './redux/userForm';
