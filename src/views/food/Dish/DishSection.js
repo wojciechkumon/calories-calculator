@@ -1,14 +1,25 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import FoodTypeAutocomplete from './FoodTypeAutocomplete';
-import {Dish} from "../../../domain/Dish";
+import {StyleSheet, Text, View, Button} from 'react-native';
+import {Dish} from '../../../domain/Dish';
+import {title} from '../../../common/style';
+import FoodList from './FoodList';
+import {PINK} from "../../../common/colors";
 
-class DishSection extends React.Component {
+class DishSection extends React.PureComponent {
+
+    addNewFood = () => {
+    };
 
     render() {
+        const {dish} = this.props;
+
         return (
             <View style={styles.container}>
-                <FoodTypeAutocomplete/>
+                <Text style={title}>{dish.dishType}</Text>
+                <FoodList foodList={dish.foodList}/>
+                <Button onPress={this.addNewFood}
+                        title='Add new food'
+                        color={PINK}/>
             </View>
         );
     }
@@ -19,7 +30,8 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 30,
         width: '100%'
-    }
+    },
+    title
 });
 
 DishSection.propTypes = {

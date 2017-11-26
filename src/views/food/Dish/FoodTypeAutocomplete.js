@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
         margin: 2
     },
     descriptionContainer: {
-        backgroundColor: '#F5FCFF',
         marginTop: 8
     },
     infoText: {
