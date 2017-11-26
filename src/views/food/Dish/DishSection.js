@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
+import PropTypes from 'prop-types';
 import {Dish} from '../../../domain/Dish';
 import {title} from '../../../common/style';
 import FoodList from './FoodList';
@@ -8,6 +9,8 @@ import {PINK} from "../../../common/colors";
 class DishSection extends React.PureComponent {
 
     addNewFood = () => {
+        const {navigation, dish} = this.props;
+        navigation.navigate('FoodCreator', {dishType: dish.dishType});
     };
 
     render() {
@@ -35,7 +38,8 @@ const styles = StyleSheet.create({
 });
 
 DishSection.propTypes = {
-    dish: Dish.props.isRequired
+    dish: Dish.props.isRequired,
+    navigation: PropTypes.object.isRequired
 };
 
 export default DishSection;

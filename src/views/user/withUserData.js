@@ -7,15 +7,12 @@ const withUserData = (WrappedComponent) => {
     const wrapper = class WithUserData extends React.Component {
 
         render() {
-            const {userData} = this.props;
-
+            const {userData, ...otherProps} = this.props;
             if (userData) {
-                return (<WrappedComponent/>);
+                return (<WrappedComponent {...otherProps}/>);
             }
 
-            return (
-                <NoUserDataView/>
-            );
+            return (<NoUserDataView/>);
         }
     };
 
@@ -26,7 +23,7 @@ const withUserData = (WrappedComponent) => {
         };
     };
 
-    return connect(mapStateToProps)(wrapper);
+    return connect(mapStateToProps, () => {return {}})(wrapper);
 };
 
 export default withUserData;

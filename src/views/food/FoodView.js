@@ -4,7 +4,7 @@ import connect from 'react-redux/es/connect/connect';
 import bindActionCreators from 'redux/es/bindActionCreators';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-native-datepicker';
-import {container, title} from '../../common/style';
+import {title} from '../../common/style';
 import {changeDate, DATE_FORMAT} from './redux/food';
 import {DailyMenuService} from "../../service/DailyMenuService";
 import {newEmptyDailyMenu} from "../../domain/DailyMenu";
@@ -41,7 +41,7 @@ class FoodView extends React.Component {
     };
 
     render() {
-        const {date} = this.props;
+        const {date, navigation} = this.props;
         const {dailyMenu} = this.state;
 
         if (!dailyMenu) {
@@ -53,7 +53,7 @@ class FoodView extends React.Component {
         }
 
         const dishSections = dailyMenu.dishList
-            .map(dish => <DishSection key={dish.dishType} dish={dish}/>);
+            .map(dish => <DishSection key={dish.dishType} dish={dish} navigation={navigation}/>);
 
         return (
             <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -85,7 +85,8 @@ const styles = StyleSheet.create({
 
 FoodView.propTypes = {
     date: PropTypes.string.isRequired,
-    changeDate: PropTypes.func.isRequired
+    changeDate: PropTypes.func.isRequired,
+    navigation: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => {

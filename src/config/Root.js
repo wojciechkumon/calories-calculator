@@ -5,13 +5,13 @@ import Provider from 'react-redux/es/components/Provider';
 import UserView from '../views/user/UserView';
 import {UserService} from '../service/UserService';
 import {setUserData} from '../views/user/redux/user';
-import {TabNavigator} from 'react-navigation';
+import {StackNavigator, TabNavigator} from 'react-navigation';
 import {Icon} from 'react-native-elements';
 import FoodView from '../views/food/FoodView';
 import InfoView from '../views/info/InfoView';
 import MacroView from '../views/macro/MacroView';
-import {PINK} from "../common/colors";
-import withUserData from "../views/user/withUserData";
+import {PINK} from '../common/colors';
+import withUserData from '../views/user/withUserData';
 
 export class Root extends Component {
 
@@ -43,7 +43,25 @@ const getNavigationOptions = (label, iconName) => {
     }
 };
 
-export const Tabs = TabNavigator({
+const FoodCreatorStack = StackNavigator({
+    FoodHome: {
+        screen: withUserData(FoodView),
+        navigationOptions: ({navigation}) => ({
+            title: 'Food',
+            headerTintColor: PINK
+        })
+    },
+    FoodCreator: {
+        path: 'creator/:dishType',
+        screen: withUserData(InfoView),
+        navigationOptions: ({navigation}) => ({
+            title: 'Food creator',
+            headerTintColor: PINK
+        })
+    },
+});
+
+const Tabs = TabNavigator({
     Me: {
         screen: UserView,
         navigationOptions: getNavigationOptions('Me', 'account-circle')
@@ -57,7 +75,7 @@ export const Tabs = TabNavigator({
         navigationOptions: getNavigationOptions('Macro', 'pie-chart')
     },
     Food: {
-        screen: withUserData(FoodView),
+        screen: FoodCreatorStack,
         navigationOptions: getNavigationOptions('Food', 'schedule'),
     }
 }, {
