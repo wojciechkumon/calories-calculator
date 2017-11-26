@@ -9,6 +9,7 @@ import {changeDate, DATE_FORMAT} from './redux/food';
 import {DailyMenuService} from '../../service/DailyMenuService';
 import {newEmptyDailyMenu} from '../../domain/DailyMenu';
 import DishSection from './Dish/DishSection';
+import {PINK} from "../../common/colors";
 
 class FoodView extends React.Component {
 
@@ -66,7 +67,12 @@ class FoodView extends React.Component {
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     onDateChange={date => this.setNewDate(date)}
-                    showIcon={false}/>
+                    showIcon={false}
+                    customStyles={{
+                        btnTextConfirm: {
+                            color: PINK
+                        }
+                    }}/>
                 {dishSections}
             </ScrollView>
         )
