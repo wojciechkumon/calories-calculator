@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
-import {FoodTypesService} from "../../../service/FoodTypesService";
+import {FoodTypesService} from '../../../service/FoodTypesService';
 
 class AutocompleteExample extends Component {
 

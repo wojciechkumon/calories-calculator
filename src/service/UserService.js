@@ -1,6 +1,6 @@
 // @flow
 import {User} from '../domain/User';
-import {readFromStorage, saveToStorage} from "./asyncStorageUtils";
+import {readFromStorage, saveToStorage} from './asyncStorageUtils';
 
 export class UserService {
 

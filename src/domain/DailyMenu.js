@@ -1,8 +1,8 @@
 // @flow
 import {Dish} from './Dish';
-import {DishTypes} from "./DishType";
-import {Food} from "./Food";
-import type {DishType} from "./DishType";
+import {DishTypes} from './DishType';
+import {Food} from './Food';
+import type {DishType} from './DishType';
 
 export class DailyMenu {
   date: string;

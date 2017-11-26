@@ -12,7 +12,7 @@ import {User} from '../../domain/User';
 import {setAndSaveUserData} from './redux/user';
 import {PINK} from '../../common/colors';
 import {title, container} from '../../common/style';
-import {UserService} from "../../service/UserService";
+import {UserService} from '../../service/UserService';
 
 class UserView extends React.PureComponent {
 

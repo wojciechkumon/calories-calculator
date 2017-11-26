@@ -1,8 +1,8 @@
 // @flow
-import {DailyMenu} from "../domain/DailyMenu";
-import {Dish} from "../domain/Dish";
-import {Food} from "../domain/Food";
-import {readFromStorage, saveToStorage} from "./asyncStorageUtils";
+import {DailyMenu} from '../domain/DailyMenu';
+import {Dish} from '../domain/Dish';
+import {Food} from '../domain/Food';
+import {readFromStorage, saveToStorage} from './asyncStorageUtils';
 
 export class DailyMenuService {
 

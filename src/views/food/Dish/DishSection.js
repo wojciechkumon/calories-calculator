@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Dish} from '../../../domain/Dish';
 import {title} from '../../../common/style';
 import FoodList from './FoodList';
-import {PINK} from "../../../common/colors";
+import {PINK} from '../../../common/colors';
 
 class DishSection extends React.PureComponent {
 

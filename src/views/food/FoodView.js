@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import DatePicker from 'react-native-datepicker';
 import {title} from '../../common/style';
 import {changeDate, DATE_FORMAT} from './redux/food';
-import {DailyMenuService} from "../../service/DailyMenuService";
-import {newEmptyDailyMenu} from "../../domain/DailyMenu";
-import DishSection from "./Dish/DishSection";
+import {DailyMenuService} from '../../service/DailyMenuService';
+import {newEmptyDailyMenu} from '../../domain/DailyMenu';
+import DishSection from './Dish/DishSection';
 
 class FoodView extends React.Component {
 

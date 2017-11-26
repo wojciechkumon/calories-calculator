@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
 import {title} from '../../../common/style';
-import {Food} from "../../../domain/Food";
+import {Food} from '../../../domain/Food';
 
 class FoodList extends React.PureComponent {
 

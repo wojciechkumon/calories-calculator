@@ -1,7 +1,7 @@
 // @flow
 import PropTypes from 'prop-types';
 import {Food} from './Food';
-import type {DishType} from "./DishType";
+import type {DishType} from './DishType';
 
 export class Dish {
   dishType: DishType;

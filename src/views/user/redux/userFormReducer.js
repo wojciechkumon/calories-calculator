@@ -7,7 +7,7 @@ import {
   USER_FORM_WEIGHT_CHANGED
 } from '../../../config/actions';
 import {Activities} from '../../../domain/Activity';
-import {Genders} from "../../../domain/Gender";
+import {Genders} from '../../../domain/Gender';
 
 const userFormStartingState = {
   weight: '',
