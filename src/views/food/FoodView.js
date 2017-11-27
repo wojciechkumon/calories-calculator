@@ -12,7 +12,7 @@ import DishSection from './Dish/DishSection';
 import {PINK} from "../../common/colors";
 import {changeDailyMenu} from "./redux/dailyMenu";
 
-class FoodView extends React.Component {
+class FoodView extends React.PureComponent {
 
   componentDidMount = () => {
     const {date} = this.props;

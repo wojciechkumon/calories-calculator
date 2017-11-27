@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {View, StyleSheet } from 'react-native';
 import {Pie} from 'react-native-pathjs-charts';
 import {macroData} from './macro';
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     container
 });
 
-class PieChart extends Component {
+class PieChart extends PureComponent {
     render() {
         const options = {
             width: 300,
