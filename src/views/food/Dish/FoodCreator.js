@@ -1,10 +1,16 @@
 import React from 'react';
 import {Button, StyleSheet, View} from 'react-native';
+import connect from 'react-redux/es/connect/connect';
+import bindActionCreators from 'redux/es/bindActionCreators';
+import PropTypes from 'prop-types';
+
 import {container} from '../../../common/style';
 import FoodTypeAutocomplete from './FoodTypeAutocomplete';
 import PositiveNumberInput from '../../PositiveNumberInput';
 import {PINK} from "../../../common/colors";
 import {FoodTypesService} from "../../../service/FoodTypesService";
+import {addFoodToDishAndPersist} from "../redux/dailyMenu";
+import {Food} from "../../../domain/Food";
 
 class FoodCreator extends React.Component {
 
@@ -38,9 +44,13 @@ class FoodCreator extends React.Component {
   };
 
   save = () => {
-    const {dishType} = this.props.navigation.state.params;
+    const {addFoodToDish, navigation} = this.props;
+    const {dishType} = navigation.state.params;
     const {foodInput, gramsInput} = this.state;
-    console.log(dishType);
+    const foodType = FoodTypesService.findFoodType(foodInput);
+    const food = new Food(foodType, Number(gramsInput));
+    addFoodToDish(dishType, food);
+    navigation.goBack();
   };
 
   render() {
@@ -61,8 +71,17 @@ class FoodCreator extends React.Component {
   }
 }
 
+FoodCreator.propTypes = {
+  addFoodToDish: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired
+};
+
 const styles = StyleSheet.create({
   container
 });
 
-export default FoodCreator;
+const mapDispatchToProps = dispatch => {
+  return {addFoodToDish: bindActionCreators(addFoodToDishAndPersist, dispatch)};
+};
+
+export default connect(() => {return {}}, mapDispatchToProps)(FoodCreator);
