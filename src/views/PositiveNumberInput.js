@@ -12,7 +12,7 @@ export default class NumberInput extends React.PureComponent {
   };
 
   render() {
-    const {name, text} = this.props;
+    const {name, inputValue} = this.props;
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{padding: 10, flexDirection: 'row'}}>
@@ -22,7 +22,7 @@ export default class NumberInput extends React.PureComponent {
             onChangeText={text => this.handleTextChange(text)}
             placeholder={name}
             keyboardType='numeric'
-            value={text}
+            value={inputValue}
           />
         </View>
       </TouchableWithoutFeedback>
@@ -32,6 +32,6 @@ export default class NumberInput extends React.PureComponent {
 
 NumberInput.propTypes = {
   name: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  inputValue: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired
 };

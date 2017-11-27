@@ -11,8 +11,8 @@ class MacroView extends React.PureComponent {
     render() {
         const {userData} = this.props;
         const user = (userData : User);
-        const intake = user.calcIntake();
-        const bmr = user.calcBmr();
+        const intake = user.calcIntake().toFixed();
+        const bmr = user.calcBmr().toFixed();
 
         return (
             <View style={styles.container}>

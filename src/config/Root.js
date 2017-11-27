@@ -12,6 +12,7 @@ import InfoView from '../views/info/InfoView';
 import MacroView from '../views/macro/MacroView';
 import {PINK} from '../common/colors';
 import withUserData from '../views/user/withUserData';
+import FoodCreator from '../views/food/Dish/FoodCreator';
 
 export class Root extends Component {
 
@@ -53,7 +54,7 @@ const FoodCreatorStack = StackNavigator({
     },
     FoodCreator: {
         path: 'creator/:dishType',
-        screen: withUserData(InfoView),
+        screen: withUserData(FoodCreator),
         navigationOptions: ({navigation}) => ({
             title: 'Food creator',
             headerTintColor: PINK

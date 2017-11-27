@@ -19,7 +19,7 @@ export const MacroTable = props => {
     return (
         <Table>
             <Row data={tableHead} style={tableStyles.head} textStyle={tableStyles.headText}/>
-            <Rows data={tableData} style={tableStyles.row} textStyle={tableStyles.text}/>
+            <Rows data={tableData} style={tableStyles.row} textStyle={tableStyles.inputValue}/>
         </Table>
     );
 };

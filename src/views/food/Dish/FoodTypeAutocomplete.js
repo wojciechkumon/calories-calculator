@@ -1,5 +1,6 @@
 import Autocomplete from 'react-native-autocomplete-input';
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import {
     StyleSheet,
     Text,
@@ -8,7 +9,7 @@ import {
 } from 'react-native';
 import {FoodTypesService} from '../../../service/FoodTypesService';
 
-class AutocompleteExample extends Component {
+class FoodTypeAutocomplete extends PureComponent {
 
     static renderFoodType(foodType) {
         const {name, kcal} = foodType;
@@ -20,16 +21,9 @@ class AutocompleteExample extends Component {
         );
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            query: ''
-        };
-    }
-
     render() {
-        const {query} = this.state;
-        const foodTypes = query ? FoodTypesService.findFoodTypes(query, 10) : [];
+        const {inputValue, onChange} = this.props;
+        const foodTypes = inputValue ? FoodTypesService.findFoodTypes(inputValue, 10) : [];
         const comp = (a, b) => a.toLowerCase().trim() === b.toLowerCase().trim();
 
         return (
@@ -38,12 +32,12 @@ class AutocompleteExample extends Component {
                     autoCapitalize="none"
                     autoCorrect={false}
                     containerStyle={styles.autocompleteContainer}
-                    data={foodTypes.length === 1 && comp(query, foodTypes[0].name) ? [] : foodTypes}
-                    defaultValue={query}
-                    onChangeText={text => this.setState({query: text})}
+                    data={foodTypes.length === 1 && comp(inputValue, foodTypes[0].name) ? [] : foodTypes}
+                    defaultValue={inputValue}
+                    onChangeText={onChange}
                     placeholder="Enter food"
                     renderItem={({name}) => (
-                        <TouchableOpacity onPress={() => this.setState({query: name})}>
+                        <TouchableOpacity onPress={() => onChange(name)}>
                             <Text style={styles.itemText}>
                                 {name}
                             </Text>
@@ -52,7 +46,7 @@ class AutocompleteExample extends Component {
                 />
                 <View style={styles.descriptionContainer}>
                     {foodTypes.length > 0 ? (
-                        AutocompleteExample.renderFoodType(foodTypes[0])
+                        FoodTypeAutocomplete.renderFoodType(foodTypes[0])
                     ) : (
                         <Text style={styles.infoText}>
                             Enter food
@@ -102,4 +96,9 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AutocompleteExample;
+FoodTypeAutocomplete.propTypes = {
+  inputValue: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
+
+export default FoodTypeAutocomplete;

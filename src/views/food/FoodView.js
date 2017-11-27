@@ -5,7 +5,7 @@ import bindActionCreators from 'redux/es/bindActionCreators';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-native-datepicker';
 import {title} from '../../common/style';
-import {changeDate, DATE_FORMAT} from './redux/food';
+import {changeDate, DATE_FORMAT} from './redux/menuDate';
 import {DailyMenuService} from '../../service/DailyMenuService';
 import {newEmptyDailyMenu} from '../../domain/DailyMenu';
 import DishSection from './Dish/DishSection';
@@ -96,7 +96,7 @@ FoodView.propTypes = {
 };
 
 const mapStateToProps = state => {
-    return {date: state.food.date};
+    return {date: state.menuDate.date};
 };
 
 const mapDispatchToProps = dispatch => {
