@@ -11,6 +11,7 @@ import {DailyMenu, newEmptyDailyMenu} from '../../domain/DailyMenu';
 import DishSection from './Dish/DishSection';
 import {PINK} from "../../common/colors";
 import {changeDailyMenu} from "./redux/dailyMenu";
+import {Dish} from "../../domain/Dish";
 
 class FoodView extends React.PureComponent {
 
@@ -50,7 +51,8 @@ class FoodView extends React.PureComponent {
     }
 
     const dishSections = dailyMenu.dishList
-    .map(dish => <DishSection key={dish.dishType} dish={dish}
+      .sort(Dish.comparator)
+      .map(dish => <DishSection key={dish.dishType} dish={dish}
                               navigation={navigation}/>);
 
     return (
