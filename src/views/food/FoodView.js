@@ -10,7 +10,7 @@ import {DailyMenuService} from '../../service/DailyMenuService';
 import {DailyMenu, newEmptyDailyMenu} from '../../domain/DailyMenu';
 import DishSection from './Dish/DishSection';
 import {PINK} from "../../common/colors";
-import {changeDailyMenu} from "./redux/dailyMenu";
+import {changeDailyMenu, deleteFoodFromDishAndPersist} from "./redux/dailyMenu";
 import {Dish} from "../../domain/Dish";
 
 class FoodView extends React.PureComponent {
@@ -40,7 +40,7 @@ class FoodView extends React.PureComponent {
   };
 
   render() {
-    const {date, navigation, dailyMenu} = this.props;
+    const {date, navigation, dailyMenu, deleteFood} = this.props;
 
     if (!dailyMenu) {
       return (
@@ -52,8 +52,10 @@ class FoodView extends React.PureComponent {
 
     const dishSections = dailyMenu.dishList
       .sort(Dish.comparator)
-      .map(dish => <DishSection key={dish.dishType} dish={dish}
-                              navigation={navigation}/>);
+      .map(dish => <DishSection key={dish.dishType}
+                                dish={dish}
+                                deleteFood={deleteFood}
+                                navigation={navigation}/>);
 
     return (
         <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -93,6 +95,7 @@ FoodView.propTypes = {
   changeDate: PropTypes.func.isRequired,
   dailyMenu: DailyMenu.props,
   changeDailyMenu: PropTypes.func.isRequired,
+  deleteFood: PropTypes.func.isRequired,
   navigation: PropTypes.object.isRequired
 };
 
@@ -106,7 +109,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     changeDate: bindActionCreators(changeDate, dispatch),
-    changeDailyMenu: bindActionCreators(changeDailyMenu, dispatch)
+    changeDailyMenu: bindActionCreators(changeDailyMenu, dispatch),
+    deleteFood: dishType => foodName => dispatch(deleteFoodFromDishAndPersist(dishType, foodName))
   };
 };
 

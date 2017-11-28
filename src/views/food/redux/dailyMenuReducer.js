@@ -1,7 +1,7 @@
 import {createReducer} from '../../../util/reduxUtils';
 import {
   ADD_FOOD_TO_DISH,
-  CURRENT_DAILY_MENU_CHANGED,
+  CURRENT_DAILY_MENU_CHANGED, DELETE_FOOD_FROM_DISH,
 } from '../../../config/actions';
 import {Dish} from "../../../domain/Dish";
 import {DailyMenu} from "../../../domain/DailyMenu";
@@ -21,8 +21,28 @@ export const dailyMenu = createReducer(dailyMenuStartingState, {
         .filter(dish => dish.dishType !== action.dishType);
     const dishToAddFood = oldDailyMenu.dishList
         .filter(dish => dish.dishType === action.dishType)[0];
+
+    const dishNewFood = dishToAddFood.foodList
+        .filter(food => food.foodType.name !== action.food.foodType.name)
+        .concat([action.food]);
     const changedDish =
-        new Dish(action.dishType, [...dishToAddFood.foodList, action.food]);
+        new Dish(action.dishType, dishNewFood);
+    const newDailyMenu =
+        new DailyMenu(oldDailyMenu.date, [...dishesToCopy, changedDish]);
+    DailyMenuService.saveDailyMenu(newDailyMenu);
+    return {current: newDailyMenu};
+  },
+  [DELETE_FOOD_FROM_DISH](state, action) {
+    const oldDailyMenu = state.current;
+    const dishesToCopy = oldDailyMenu.dishList
+        .filter(dish => dish.dishType !== action.dishType);
+    const dishToDeleteFood = oldDailyMenu.dishList
+        .filter(dish => dish.dishType === action.dishType)[0];
+
+    const foodToSave = dishToDeleteFood.foodList
+        .filter(food => food.foodType.name !== action.foodName);
+    const changedDish =
+        new Dish(action.dishType, foodToSave);
     const newDailyMenu =
         new DailyMenu(oldDailyMenu.date, [...dishesToCopy, changedDish]);
     DailyMenuService.saveDailyMenu(newDailyMenu);

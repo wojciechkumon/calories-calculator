@@ -14,12 +14,16 @@ class DishSection extends React.PureComponent {
     };
 
     render() {
-        const {dish} = this.props;
+        const {dish, deleteFood} = this.props;
+        const {dishType, foodList} = dish;
+        const deleteFoodFromDish = deleteFood(dishType);
 
         return (
             <View style={styles.container}>
-                <Text style={title}>{dish.dishType}</Text>
-                <FoodList foodList={dish.foodList}/>
+                <Text style={title}>{dishType}</Text>
+                <FoodList foodList={foodList}
+                          dishType={dishType}
+                          deleteFoodFromDish={deleteFoodFromDish}/>
                 <Button onPress={this.addNewFood}
                         title='Add new food'
                         color={PINK}/>
@@ -39,6 +43,7 @@ const styles = StyleSheet.create({
 
 DishSection.propTypes = {
     dish: Dish.props.isRequired,
+    deleteFood: PropTypes.func.isRequired,
     navigation: PropTypes.object.isRequired
 };
 
