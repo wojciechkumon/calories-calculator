@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
 import {Dish} from '../../../domain/Dish';
 import {title} from '../../../common/style';
@@ -18,7 +18,12 @@ class DishSection extends React.PureComponent {
         const {dishType, foodList} = dish;
         const deleteFoodFromDish = deleteFood(dishType);
 
-        return (
+        const dishKcal = mapper(foodList, 'kcal');
+        const dishProteins = mapper(foodList, 'proteins');
+        const dishFat = mapper(foodList, 'fat');
+        const dishCarbohydrates = mapper(foodList, 'carbohydrates');
+
+      return (
             <View style={styles.container}>
                 <Text style={title}>{dishType}</Text>
                 <FoodList foodList={foodList}
@@ -27,10 +32,33 @@ class DishSection extends React.PureComponent {
                 <Button onPress={this.addNewFood}
                         title='Add new food'
                         color={PINK}/>
+                {dishKcal > 0 && <Total text='Calories: ' value={dishKcal} unit='kcal'/>}
+                <MacroTotal
+                    proteins={dishProteins}
+                    fat={dishFat}
+                    carbohydrates={dishCarbohydrates}
+                />
             </View>
         );
     }
 }
+
+const Total = props =>
+    <Text style={styles.total}>{props.text} {props.value} {props.unit}</Text>;
+
+const MacroTotal = props =>
+    <View>
+      {props.proteins > 0 && <Total text='Proteins: ' value={props.proteins} unit='g'/>}
+      {props.fat > 0 && <Total text='Fats: ' value={props.fat} unit='g'/>}
+      {props.carbohydrates > 0 && <Total text='Carbohydrates: ' value={props.carbohydrates} unit='g'/>}
+    </View>;
+
+const mapper = (foodList, field) => {
+    return foodList
+        .map(food => (food.grams * food.foodType[field]) / 100)
+        .reduce((a, b) => a + b, 0)
+        .toFixed();
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -38,7 +66,11 @@ const styles = StyleSheet.create({
         padding: 30,
         width: '100%'
     },
-    title
+    title,
+    total: {
+        textAlign: 'right',
+        fontWeight: 'bold'
+    }
 });
 
 DishSection.propTypes = {
