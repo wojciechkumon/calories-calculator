@@ -12,6 +12,10 @@ import {FoodTypesService} from "../../../service/FoodTypesService";
 import {addFoodToDishAndPersist} from "../redux/dailyMenu";
 import {Food} from "../../../domain/Food";
 
+/**
+ * FoodCreator react component
+ * @extends React.Component
+ */
 class FoodCreator extends React.Component {
 
   constructor() {
@@ -23,18 +27,33 @@ class FoodCreator extends React.Component {
     };
   }
 
+  /**
+   * Sets grams
+   * @method
+   * @param gramsInput {string}
+   */
   setGrams = gramsInput => {
     const {foodInput} = this.state;
     this.setState({gramsInput});
     this.validate(foodInput, gramsInput);
   };
 
+  /**
+   * Sets food input
+   * @method
+   * @param foodInput {string}
+   */
   setFood = foodInput => {
     const {gramsInput} = this.state;
     this.setState({foodInput});
     this.validate(foodInput, gramsInput);
   };
 
+  /**
+   * Validates inputs
+   * @param food {string}
+   * @param grams {string}
+   */
   validate = (food, grams) => {
     if (FoodTypesService.findFoodType(food) && grams) {
       this.setState({validationError: false});
@@ -43,6 +62,10 @@ class FoodCreator extends React.Component {
     this.setState({validationError: true});
   };
 
+    /**
+     * Saves new Food
+     * @method
+     */
   save = () => {
     const {addFoodToDish, navigation} = this.props;
     const {dishType} = navigation.state.params;

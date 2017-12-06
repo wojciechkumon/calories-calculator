@@ -11,6 +11,10 @@ const dailyMenuStartingState = {
   current: undefined
 };
 
+/**
+ * dailyMenu reducer
+ * @returns {Function}
+ */
 export const dailyMenu = createReducer(dailyMenuStartingState, {
   [CURRENT_DAILY_MENU_CHANGED](state, action) {
     return {current: action.dailyMenu};

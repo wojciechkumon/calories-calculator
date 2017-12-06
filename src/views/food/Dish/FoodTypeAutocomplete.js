@@ -9,6 +9,10 @@ import {
 } from 'react-native';
 import {FoodTypesService} from '../../../service/FoodTypesService';
 
+/**
+ * FoodTypeAutocomplete react component
+ * @extends PureComponent
+ */
 class FoodTypeAutocomplete extends PureComponent {
 
     static renderFoodType(foodType) {

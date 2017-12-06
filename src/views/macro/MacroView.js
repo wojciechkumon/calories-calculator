@@ -6,6 +6,10 @@ import PieChart from './PieChart';
 import {MacroTable} from './Table';
 import {text} from '../../common/style';
 
+/**
+ * MacroView component
+ * @extends React.PureComponent
+ */
 class MacroView extends React.PureComponent {
 
     render() {

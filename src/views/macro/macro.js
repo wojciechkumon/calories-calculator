@@ -6,6 +6,10 @@ export const FATS_CALORIES = 9;
 export const CARBS_CALORIES = 4;
 export const PROTEINS_CALORIES = 4;
 
+/**
+ * macroData
+ * @const
+ */
 export const macroData = [
     {
         "name": "fats",

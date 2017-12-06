@@ -7,8 +7,16 @@ import FoodList from './FoodList';
 import {PINK} from '../../../common/colors';
 import {Total} from '../../Total';
 
+/**
+ * DishSection react component
+ * @extends React.PureComponent
+ */
 class DishSection extends React.PureComponent {
 
+    /**
+     * Adds new food
+     * @method
+     */
     addNewFood = () => {
         const {navigation, dish} = this.props;
         navigation.navigate('FoodCreator', {dishType: dish.dishType});

@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
     container
 });
 
+/**
+ * PieChar component
+ * @extends React.PureComponent
+ */
 class PieChart extends PureComponent {
     render() {
         const options = {

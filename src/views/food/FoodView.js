@@ -16,6 +16,10 @@ import {Dish} from '../../domain/Dish';
 import {Total} from '../Total';
 import {User} from '../../domain/User';
 
+/**
+ * FoodView react component
+ * @extends React.PureComponent
+ */
 class FoodView extends React.PureComponent {
 
   componentDidMount = () => {
@@ -23,6 +27,11 @@ class FoodView extends React.PureComponent {
     this.findDailyMenu(date);
   };
 
+  /**
+   * changes date
+   * @method
+   * @param newDate {string}
+   */
   setNewDate = newDate => {
     const {changeDate, changeDailyMenu} = this.props;
     changeDailyMenu(undefined);
@@ -30,6 +39,11 @@ class FoodView extends React.PureComponent {
     this.findDailyMenu(newDate);
   };
 
+  /**
+   * Finds daily menu
+   * @method
+   * @param newDate {string}
+   */
   findDailyMenu = newDate => {
     const {changeDailyMenu} = this.props;
     DailyMenuService.findDailyMenu(newDate)

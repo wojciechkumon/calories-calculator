@@ -7,6 +7,12 @@ const calculateMacroGrams = (intake, macro, macroCal) => {
     return Math.round((intake * macro / 100) / macroCal);
 };
 
+/**
+ * MacroTable react component
+ * @function
+ * @param props {any}
+ * @return {*}
+ */
 export const MacroTable = props => {
     const intake = props.intake;
     const fats = calculateMacroGrams(intake, FATS, FATS_CALORIES);

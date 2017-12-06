@@ -3,6 +3,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import {title, container} from '../../common/style';
 import {CALORIES_TITLE, CALORIES_TEXT, MACRO_TITLE, MACRO_TEXT, FOOD_TITLE, FOOD_TEXT} from './text';
 
+/**
+ * InfoView component
+ * @extends React.PureComponent
+ */
 class InfoView extends React.PureComponent {
 
   render() {

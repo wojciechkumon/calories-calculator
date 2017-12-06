@@ -5,6 +5,10 @@ import Swipeout from 'react-native-swipeout';
 import {title} from '../../../common/style';
 import {Food} from '../../../domain/Food';
 
+/**
+ * FoodList react component
+ * @extends React.PureComponent
+ */
 class FoodList extends React.PureComponent {
 
   renderRow = ({item}) => {
