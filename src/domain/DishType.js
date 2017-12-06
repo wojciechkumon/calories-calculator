@@ -1,5 +1,10 @@
 // @flow
 
+/**
+ * DishTypes domain enum
+ * @enum
+ * @type {{BREAKFAST: string, LUNCH: string, DINNER: string, SNACK: string, SUPPER: string}}
+ */
 export const DishTypes = {
     BREAKFAST: 'BREAKFAST',
     LUNCH: 'LUNCH',

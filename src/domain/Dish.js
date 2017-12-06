@@ -4,11 +4,18 @@ import {Food} from './Food';
 /*:: import type {DishType} from './DishType'; */
 import {DishTypes} from "./DishType";
 
+/**
+ * Dish domain object
+ */
 export class Dish {
 /*::
   dishType: DishType;
   foodList: Food[]; */
 
+  /**
+   * @param dishType {DishType}
+   * @param foodList {Food[]}
+   */
   constructor(dishType /*:: : DishType */, foodList /*:: : Food[] */) {
     this.dishType = dishType;
     this.foodList = foodList;

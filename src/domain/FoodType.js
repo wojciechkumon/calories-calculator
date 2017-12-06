@@ -1,6 +1,9 @@
 // @flow
 import PropTypes from 'prop-types';
 
+/**
+ * FoodType domain object
+ */
 export class FoodType {
 /*::
   name: string;
@@ -10,12 +13,12 @@ export class FoodType {
   carbohydrates: number; */
 
   /**
-   *
-   * @param name food name
-   * @param kcal per 100g
-   * @param proteins per 100g
-   * @param fat per 100g
-   * @param carbohydrates per 100g
+   * @constructor
+   * @param name {string} food name
+   * @param kcal {number} per 100g
+   * @param proteins {number} per 100g
+   * @param fat {number} per 100g
+   * @param carbohydrates {number} per 100g
    */
   constructor(name /*:: : string */, kcal /*:: : number */, proteins /*:: : number */,
               fat /*:: : number */, carbohydrates /*:: : number */) {

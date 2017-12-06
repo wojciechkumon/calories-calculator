@@ -1,5 +1,9 @@
 // @flow
 
+/**
+ * Activities domain enum
+ * @enum
+ */
 export const Activities = {
   NO_ACTIVITY: 'NO_ACTIVITY',
   LIGHT_ACTIVITY: 'LIGHT_ACTIVITY',

@@ -9,6 +9,11 @@ const LIGHT_ACTIVITY_COEFFICIENT = 1.375;
 const AVERAGE_ACTIVITY_COEFFICIENT = 1.55;
 const HIGH_ACTIVITY_COEFFICIENT = 1.725;
 
+/**
+ * @function
+ * @param gender {Gender}
+ * @returns {number} gender BMR coefficient
+ */
 export const getGenderCoefficient = gender => {
   switch (gender) {
     case Genders.FEMALE:
@@ -18,6 +23,11 @@ export const getGenderCoefficient = gender => {
   }
 };
 
+/**
+ * @function
+ * @param activity {Activity}
+ * @returns {number} activity coefficient
+ */
 export const getActivityCoefficient = activity => {
   switch (activity) {
     case Activities.NO_ACTIVITY:

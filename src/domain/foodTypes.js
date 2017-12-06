@@ -1,6 +1,10 @@
 // @flow
 import {FoodType} from './FoodType';
 
+/**
+ * FoodTypes static database
+ * @const
+ */
 export const foodTypes /*:: : { [string]: FoodType } */ = {
   "butter,with salt": new FoodType("butter,with salt", 717, 0.85, 81.11, 0.06),
   "butter,whipped,w/ salt": new FoodType("butter,whipped,w/ salt", 718, 0.49, 78.3, 2.87),
