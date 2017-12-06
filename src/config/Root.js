@@ -13,7 +13,10 @@ import {PINK} from '../common/colors';
 import withUserData from '../views/user/withUserData';
 import FoodCreator from '../views/food/Dish/FoodCreator';
 
-export class Root extends Component {
+/**
+ * React Root class
+ */
+class Root extends Component {
 
     componentDidMount() {
         const {dispatch} = this.props.store;

@@ -4,8 +4,17 @@ import {Dish} from '../domain/Dish';
 import {Food} from '../domain/Food';
 import {readFromStorage, saveToStorage} from './asyncStorageUtils';
 
+/**
+ * DailyMenuService
+ */
 export class DailyMenuService {
 
+    /**
+     * Finds DailyMenu for specified date
+     * @method
+     * @param date {string}
+     * @returns {Promise<DailyMenu>}
+     */
     static findDailyMenu = (date /*::: string */) /*:: : Promise<?DailyMenu> */ => {
         try {
             return readFromStorage(getDailyMenuKey(date))
@@ -20,6 +29,12 @@ export class DailyMenuService {
         }
     };
 
+    /**
+     * Persists DailyMenu
+     * @method
+     * @param dailyMenu {DailyMenu}
+     * @returns {Promise<void>}
+     */
     static saveDailyMenu = (dailyMenu /*:: : DailyMenu */) /*:: : Promise<any> */=> {
         return saveToStorage(getDailyMenuKey(dailyMenu.date), JSON.stringify(dailyMenu));
     };
