@@ -33,6 +33,7 @@
     "react-native-datepicker": "^1.6.0",
     "react-native-elements": "^0.18.2",
     "react-native-pathjs-charts": "^0.0.32",
+    "react-native-progress": "^3.4.0",
     "react-native-radio-buttons": "^1.0.0",
     "react-native-selectbox": "^0.1.2",
     "react-native-simple-radio-button": "^2.7.0",

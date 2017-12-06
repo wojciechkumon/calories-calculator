@@ -1,4 +1,5 @@
 // @flow
+import PropTypes from 'prop-types';
 import type {Activity} from './Activity';
 import type {Gender} from './Gender';
 import {getActivityCoefficient, getGenderCoefficient} from './coefficients';
@@ -28,4 +29,12 @@ export class User {
     const bmr = this.calcBmr();
     return bmr * coefficient;
   }
+
+  static props = PropTypes.shape({
+    weight: PropTypes.number.isRequired,
+    age: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    activity: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired
+  });
 }

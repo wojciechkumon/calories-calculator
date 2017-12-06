@@ -50,13 +50,13 @@ class UserView extends React.PureComponent {
                     </Text>
                 </View>
                 <View style={styles.formSection}>
-                    <PositiveNumberInput name='weight'
+                    <PositiveNumberInput name='weight (kg)'
                                          inputValue={weight}
                                          onChangeText={this.createFieldSetter('weight')}/>
                     <PositiveNumberInput name='age'
                                          inputValue={age}
                                          onChangeText={this.createFieldSetter('age')}/>
-                    <PositiveNumberInput name='height'
+                    <PositiveNumberInput name='height (cm)'
                                          inputValue={height}
                                          onChangeText={this.createFieldSetter('height')}/>
                     <GenderRadioButton gender={gender}

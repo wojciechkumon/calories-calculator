@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
     ...text
 });
 
+MacroView.propTypes = {
+  userData: User.props
+};
+
 const mapStateToProps = state => {
     return {
         userData: state.user.userData

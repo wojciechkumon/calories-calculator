@@ -5,6 +5,7 @@ import {Dish} from '../../../domain/Dish';
 import {title} from '../../../common/style';
 import FoodList from './FoodList';
 import {PINK} from '../../../common/colors';
+import {Total} from '../../Total';
 
 class DishSection extends React.PureComponent {
 
@@ -42,9 +43,6 @@ class DishSection extends React.PureComponent {
         );
     }
 }
-
-const Total = props =>
-    <Text style={styles.total}>{props.text} {props.value} {props.unit}</Text>;
 
 const MacroTotal = props =>
     <View>
