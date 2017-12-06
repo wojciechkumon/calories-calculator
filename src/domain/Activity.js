@@ -7,4 +7,6 @@ export const Activities = {
   HIGH_ACTIVITY: 'HIGH_ACTIVITY'
 };
 
+/*::
 export type Activity = $Keys<typeof Activities>
+*/

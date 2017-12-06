@@ -10,7 +10,7 @@ class MacroView extends React.PureComponent {
 
     render() {
         const {userData} = this.props;
-        const user = (userData : User);
+        const user = (userData /*:: : User */);
         const intake = user.calcIntake().toFixed();
         const bmr = user.calcBmr().toFixed();
 

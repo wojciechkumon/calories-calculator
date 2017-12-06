@@ -14,6 +14,10 @@ import {PINK} from '../../common/colors';
 import {title, container} from '../../common/style';
 import {UserService} from '../../service/UserService';
 
+/**
+ * UserView class, allows setting user data
+ * @extends React.PureComponent
+ */
 class UserView extends React.PureComponent {
 
   componentDidMount = () => {
@@ -35,7 +39,7 @@ class UserView extends React.PureComponent {
 
   save = () => {
     const {weight, age, height, gender, activity, saveUserData} = this.props;
-    let user: User = new User(Number(weight), Number(age), Number(height), activity, gender);
+    let user /*:: : User */ = new User(Number(weight), Number(age), Number(height), activity, gender);
     saveUserData(user);
   };
 

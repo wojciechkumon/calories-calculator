@@ -2,11 +2,12 @@
 import PropTypes from 'prop-types';
 
 export class FoodType {
+/*::
   name: string;
   kcal: number;
   proteins: number;
   fat: number;
-  carbohydrates: number;
+  carbohydrates: number; */
 
   /**
    *
@@ -16,7 +17,8 @@ export class FoodType {
    * @param fat per 100g
    * @param carbohydrates per 100g
    */
-  constructor(name: string, kcal: number, proteins: number, fat: number, carbohydrates: number) {
+  constructor(name /*:: : string */, kcal /*:: : number */, proteins /*:: : number */,
+              fat /*:: : number */, carbohydrates /*:: : number */) {
     this.name = name;
     this.kcal = kcal;
     this.proteins = proteins;

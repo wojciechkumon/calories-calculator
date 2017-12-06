@@ -1,19 +1,20 @@
 // @flow
 import PropTypes from 'prop-types';
 import {Food} from './Food';
-import type {DishType} from './DishType';
+/*:: import type {DishType} from './DishType'; */
 import {DishTypes} from "./DishType";
 
 export class Dish {
+/*::
   dishType: DishType;
-  foodList: Food[];
+  foodList: Food[]; */
 
-  constructor(dishType: DishType, foodList: Food[]) {
+  constructor(dishType /*:: : DishType */, foodList /*:: : Food[] */) {
     this.dishType = dishType;
     this.foodList = foodList;
   }
 
-  static comparator = (left: Dish, right: Dish) => {
+  static comparator = (left, right) => {
     return dishTypeMapping[left.dishType] - dishTypeMapping[right.dishType];
   };
 

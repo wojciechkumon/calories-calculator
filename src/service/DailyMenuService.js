@@ -6,7 +6,7 @@ import {readFromStorage, saveToStorage} from './asyncStorageUtils';
 
 export class DailyMenuService {
 
-    static findDailyMenu = (date: string): Promise<?DailyMenu> => {
+    static findDailyMenu = (date /*::: string */) /*:: : Promise<?DailyMenu> */ => {
         try {
             return readFromStorage(getDailyMenuKey(date))
                 .then(string => {
@@ -20,12 +20,12 @@ export class DailyMenuService {
         }
     };
 
-    static saveDailyMenu = (dailyMenu: DailyMenu): Promise<any> => {
+    static saveDailyMenu = (dailyMenu /*:: : DailyMenu */) /*:: : Promise<any> */=> {
         return saveToStorage(getDailyMenuKey(dailyMenu.date), JSON.stringify(dailyMenu));
     };
 }
 
-const getDailyMenuKey = (date: string) => {
+const getDailyMenuKey = (date /*:: : string */) => {
     return `dailyMenu_${date}`
 };
 

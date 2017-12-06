@@ -4,7 +4,7 @@ import {readFromStorage, saveToStorage} from './asyncStorageUtils';
 
 export class UserService {
 
-  static getPersistedUserData = (): Promise<?User> => {
+  static getPersistedUserData = () /*:: : Promise<?User> */ => {
     try {
       return readFromStorage(USER_KEY)
         .then(string => {
@@ -18,7 +18,7 @@ export class UserService {
     }
   };
 
-  static saveUserData = (user: User): Promise<any> => {
+  static saveUserData = (user /*:: : User */) /*:: : Promise<any> */ => {
     return saveToStorage(USER_KEY, JSON.stringify(user));
   };
 }

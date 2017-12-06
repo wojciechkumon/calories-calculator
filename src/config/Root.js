@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Route, Switch} from 'react-router-native';
 import Provider from 'react-redux/es/components/Provider';
 import UserView from '../views/user/UserView';
 import {UserService} from '../service/UserService';

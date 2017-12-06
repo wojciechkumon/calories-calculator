@@ -5,4 +5,6 @@ export const Genders = {
   MALE: 'MALE'
 };
 
+/*::
 export type Gender = $Keys<typeof Genders>
+*/

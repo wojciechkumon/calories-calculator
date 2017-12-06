@@ -1,17 +1,19 @@
 // @flow
 import PropTypes from 'prop-types';
-import type {Activity} from './Activity';
-import type {Gender} from './Gender';
+/*:: import type {Activity} from './Activity';
+import type {Gender} from './Gender'; */
 import {getActivityCoefficient, getGenderCoefficient} from './coefficients';
 
 export class User {
+/*::
   weight: number;
   age: number;
   height: number;
   activity: Activity;
-  gender: Gender;
+  gender: Gender; */
 
-  constructor(weight: number, age: number, height: number, activity: Activity, gender: Gender) {
+  constructor(weight /*:: : number */, age /*:: : number */, height /*:: : number */,
+              activity /*:: : Activity */, gender /*:: : Gender */) {
     this.weight = weight;
     this.age = age;
     this.height = height;

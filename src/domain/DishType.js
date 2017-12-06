@@ -8,4 +8,6 @@ export const DishTypes = {
     SUPPER: 'SUPPER'
 };
 
+/*::
 export type DishType = $Keys<typeof DishTypes>
+*/
