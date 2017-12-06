@@ -5,6 +5,10 @@ import Selectbox from 'react-native-selectbox';
 import {Activities} from '../../domain/Activity';
 import {PINK} from '../../common/colors';
 
+/**
+ * ActivityPicker component
+ * @extends React.PureComponent
+ */
 class ActivityPicker extends React.PureComponent {
 
   render() {

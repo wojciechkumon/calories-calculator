@@ -4,7 +4,11 @@ import {SegmentedControls} from 'react-native-radio-buttons';
 import {Genders} from '../../domain/Gender';
 import {PINK} from '../../common/colors';
 
-export default class GenderRadioButton extends React.PureComponent {
+/**
+ * React component representing gender radio button
+ * @extends React.PureComponent
+ */
+class GenderRadioButton extends React.PureComponent {
 
   handleChange = newOption => {
     const gender = newOption.value;
@@ -38,3 +42,5 @@ GenderRadioButton.propTypes = {
   gender: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired
 };
+
+export default GenderRadioButton;

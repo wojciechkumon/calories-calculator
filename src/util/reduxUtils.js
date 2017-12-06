@@ -1,3 +1,10 @@
+/**
+ * Creates reducer
+ * @function
+ * @param initialState {any}
+ * @param handlers {object}
+ * @return {function}
+ */
 export const createReducer = (initialState, handlers) => {
   return (state = initialState, action) => {
     if (handlers.hasOwnProperty(action.type)) {
@@ -8,6 +15,13 @@ export const createReducer = (initialState, handlers) => {
   }
 };
 
+/**
+ * Creates action creator
+ * @function
+ * @param type {string}
+ * @param argNames {...string}
+ * @return {function}
+ */
 export const makeActionCreator = (type, ...argNames) => {
   return (...args) => {
     const action = {type};

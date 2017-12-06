@@ -17,6 +17,11 @@ const userFormStartingState = {
   activity: Activities.NO_ACTIVITY
 };
 
+/**
+ * userForm Reducer
+ * @function
+ * @returns {Function}
+ */
 export const userForm = createReducer(userFormStartingState, {
   [USER_FORM_WEIGHT_CHANGED](state, action) {
     return {...state, weight: action.weight};

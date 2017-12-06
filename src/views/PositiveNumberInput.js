@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Keyboard, Text, TextInput, TouchableWithoutFeedback, View} from 'react-native';
 
-export default class NumberInput extends React.PureComponent {
+/**
+ * React component representing input field for positive numbers only
+ * @extends React.PureComponent
+ */
+class PositiveNumberInput extends React.PureComponent {
 
   handleTextChange = newText => {
     if (isNaN(newText) || Number(newText) <= 0) {
@@ -30,8 +34,10 @@ export default class NumberInput extends React.PureComponent {
   }
 }
 
-NumberInput.propTypes = {
+PositiveNumberInput.propTypes = {
   name: PropTypes.string.isRequired,
   inputValue: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired
 };
+
+export default PositiveNumberInput;

@@ -13,6 +13,12 @@ const setUserHeight = makeActionCreator(USER_FORM_HEIGHT_CHANGED, 'height');
 const setUserGender = makeActionCreator(USER_FORM_GENDER_CHANGED, 'gender');
 const setUserActivity = makeActionCreator(USER_FORM_ACTIVITY_CHANGED, 'activity');
 
+/**
+ * Returns action for specified field and value
+ * @param name {string}
+ * @param value {any}
+ * @return {*}
+ */
 export const setUserField = (name, value) => {
   switch (name) {
     case 'weight':
