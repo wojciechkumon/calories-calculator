@@ -1696,7 +1696,7 @@ decamelize@^1.0.0, decamelize@^1.1.1:
 
 dedent@^0.6.0:
   version "0.6.0"
-  resolved "http://registry.npmjs.org/dedent/-/dedent-0.6.0.tgz#0e6da8f0ce52838ef5cec5c8f9396b0c1b64a3cb"
+  resolved "https://registry.npmjs.org/dedent/-/dedent-0.6.0.tgz#0e6da8f0ce52838ef5cec5c8f9396b0c1b64a3cb"
 
 deep-diff@0.3.4:
   version "0.3.4"
@@ -2270,7 +2270,7 @@ fresh@0.5.2:
 
 fs-extra@^0.30.0:
   version "0.30.0"
-  resolved "http://registry.npmjs.org/fs-extra/-/fs-extra-0.30.0.tgz#f233ffcc08d4da7d432daa449776989db1df93f0"
+  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-0.30.0.tgz#f233ffcc08d4da7d432daa449776989db1df93f0"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
@@ -2280,7 +2280,7 @@ fs-extra@^0.30.0:
 
 fs-extra@^1.0.0:
   version "1.0.0"
-  resolved "http://registry.npmjs.org/fs-extra/-/fs-extra-1.0.0.tgz#cd3ce5f7e7cb6145883fcae3191e9877f8587950"
+  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-1.0.0.tgz#cd3ce5f7e7cb6145883fcae3191e9877f8587950"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
@@ -5869,8 +5869,8 @@ traverse@0.6.6:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
 
 tree-kill@^1.1.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.0.tgz#5846786237b4239014f05db156b643212d4c6f36"
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
 
 trim-right@^1.0.1:
   version "1.0.1"
